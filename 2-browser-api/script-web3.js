@@ -1,3 +1,5 @@
+import './node_modules/web3/dist/web3.min.js';
+
 window.addEventListener('load', async () => {
 	const contract = {
 		address: '0x21EE73541d717E7a5DaCf915c23ee2665888C4a8',
@@ -32,19 +34,28 @@ window.addEventListener('load', async () => {
 		provider: 'goerli'
 	};
 
-	const provider = new ethers.providers.Web3Provider(window.ethereum, contract.provider);
+	if (window.ethereum) {
+		window.web3 = new Web3(ethereum);
+		/* try {
+			await ethereum.enable();
+		} catch (e) {
+			console.error('Rejected by user.');
+			alert('You rejected the wallet permission.');
+			return;
+		} */
+	} else if (window.web3) {
+		window.web3 = new Web3(web3.currentProvider);
+	} else {
+		console.error('No Web3 provider detected.');
+		alert('No Web3 provider detected.');
+		return;
+	}
 
-	await provider.send('eth_requestAccounts', [])
-	const [account] = await provider.listAccounts();
-	const signer = await provider.getSigner(account);
-	const Mood = new ethers.Contract(
-		contract.address,
-		contract.abi,
-		signer
-	);
+	const [account] = await ethereum.request({ method: 'eth_requestAccounts' });
+	const Mood = new web3.eth.Contract(contract.abi, contract.address);
 
 	const getMood = async () => {
-		const mood = await Mood.getMood();
+		const mood = await Mood.methods.getMood().call();
 		const output = document.getElementById('output');
 		output.classList.remove('bg-danger');
 		output.classList.add('bg-success');
@@ -54,7 +65,7 @@ window.addEventListener('load', async () => {
 	const setMood = async () => {
 		const input = document.getElementById('input');
 		const value = input.value;
-		await Mood.setMood(value);
+		await Mood.methods.setMood(value).send({ from: account });
 	};
 
 	const get = document.getElementById('get');
