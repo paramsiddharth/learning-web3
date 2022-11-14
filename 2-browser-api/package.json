@@ -1,0 +1,22 @@
+{
+  "name": "2-browser-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Param Siddharth <contact@paramsid.com> (http://www.paramsid.com/)",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.2",
+    "ethers": "^5.7.2",
+    "web3": "^1.8.1"
+  }
+}

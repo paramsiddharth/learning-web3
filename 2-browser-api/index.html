@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+	<meta charset='UTF-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<title>Mood Tracker</title>
+	<link rel='stylesheet' href='node_modules/bootstrap/dist/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='style.css'>
+	<script src='node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'></script>
+	<script src='node_modules/ethers/dist/ethers.umd.min.js'></script>
+	<script src='script.js'></script>
+</head>
+<body>
+	<header class='header p-4'>
+		<h1>Mood Tracker</h1>
+		<h2 class='h4'>You can track your mood here.</h2>
+	</header>
+	<main class='container'>
+		<div class='row'>
+			<div class='col-12'>
+				<div class='input-group mb-3'>
+					<div class='input-group-prepend'>
+						<label for='mood' class='input-group-text'>
+							Mood:
+						</label>
+					</div>
+					<input name='mood' id='input' type='text' class='form-control' placeholder='Happy'>
+				</div>
+			</div>
+			<div class='col-12'>
+				Currrent: <div id='output' class='d-inline-block p-2 bg-danger text-light rounded-3'>&lt;Unavailable></div>
+			</div>
+			<div class='col-md-6 offset-md-3 col-12'>
+				<div class='btn-group w-100' role='group'>
+					<button id='set' type='button' class='btn btn-primary'>Set</button>
+					<button id='get' type='button' class='btn btn-secondary'>Get</button>
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer class='footer p-4 text-center'>
+		<div class=''>© Param Siddharth 2022</div>
+	</footer>
+</body>
+</html>
