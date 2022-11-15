@@ -9,8 +9,10 @@
     "blockchain": "ganache -v -d --database.dbPath ./blk -i 344 -a 25",
     "compile": "truffle compile",
     "console": "truffle console",
+    "dashboard": "truffle dashboard",
     "deploy": "truffle migrate",
-    "deploy:goerli": "truffle migrate --network goerli"
+    "deploy:goerli": "truffle migrate --network goerli",
+    "deploy:wallet": "truffle migrate --network dashboard"
   },
   "keywords": [],
   "author": "Param Siddharth <contact@paramsid.com> (http://www.paramsid.com/)",
@@ -19,6 +21,7 @@
     "@openzeppelin/contracts": "^4.8.0",
     "@truffle/hdwallet-provider": "^2.1.1",
     "dotenv": "^16.0.3",
+    "ganache": "^7.5.0",
     "truffle": "^5.6.5"
   }
 }
