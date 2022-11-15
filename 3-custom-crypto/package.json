@@ -5,9 +5,20 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "truffle test",
+    "blockchain": "ganache -v -d --database.dbPath ./blk -i 344 -a 25",
+    "compile": "truffle compile",
+    "console": "truffle console",
+    "deploy": "truffle migrate",
+    "deploy:goerli": "truffle migrate --network goerli"
   },
   "keywords": [],
   "author": "Param Siddharth <contact@paramsid.com> (http://www.paramsid.com/)",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.0",
+    "@truffle/hdwallet-provider": "^2.1.1",
+    "dotenv": "^16.0.3",
+    "truffle": "^5.6.5"
+  }
 }
