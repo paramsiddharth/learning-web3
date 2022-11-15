@@ -6,7 +6,14 @@
   "main": "index.js",
   "scripts": {
     "start": "lite-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "truffle test",
+    "blockchain": "ganache -v -d --database.dbPath ./blk -i 344 -a 25",
+    "compile": "truffle compile",
+    "console": "truffle console",
+    "dashboard": "truffle dashboard",
+    "deploy": "truffle migrate",
+    "deploy:goerli": "truffle migrate --network goerli",
+    "deploy:wallet": "truffle migrate --network dashboard"
   },
   "keywords": [],
   "author": "Param Siddharth <contact@paramsid.com> (http://www.paramsid.com/)",
@@ -15,8 +22,12 @@
     "lite-server": "^2.6.1"
   },
   "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.1",
     "bootstrap": "^5.2.2",
+    "dotenv": "^16.0.3",
     "ethers": "^5.7.2",
+    "ganache": "^7.5.0",
+    "truffle": "^5.6.5",
     "web3": "^1.8.1"
   }
 }

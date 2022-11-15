@@ -131,3 +131,9 @@ dist
 
 # Local information
 local.txt
+
+# Dev blockchain
+blk/
+
+# Build output
+build/
