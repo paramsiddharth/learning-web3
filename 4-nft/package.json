@@ -1,0 +1,28 @@
+{
+  "name": "4-nft",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "blockchain": "ganache -v -d --database.dbPath ./blk -i 344 -a 25",
+    "compile": "hardhat compile",
+    "console": "hardhat console",
+    "deploy": "hardhat run scripts/deploy.js --network dev",
+    "deploy:goerli": "hardhat run scripts/deploy.js --network goerli"
+  },
+  "keywords": [],
+  "author": "Param Siddharth <contact@paramsid.com> (http://www.paramsid.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "fp-ts": "^2.13.1",
+    "ganache": "^7.5.0",
+    "hardhat": "^2.12.2",
+    "io-ts": "^2.2.19"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.0"
+  }
+}
