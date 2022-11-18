@@ -9,13 +9,14 @@
     "blockchain": "ganache -v -d --database.dbPath ./blk -i 344 -a 25",
     "compile": "hardhat compile",
     "console": "hardhat console",
-    "deploy": "hardhat run scripts/deploy.js --network dev",
+    "deploy": "hardhat run scripts/deploy.js",
     "deploy:goerli": "hardhat run scripts/deploy.js --network goerli"
   },
   "keywords": [],
   "author": "Param Siddharth <contact@paramsid.com> (http://www.paramsid.com/)",
   "license": "ISC",
   "dependencies": {
+    "@openzeppelin/contracts": "^4.8.0",
     "dotenv": "^16.0.3",
     "fp-ts": "^2.13.1",
     "ganache": "^7.5.0",
